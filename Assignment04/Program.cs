@@ -41,8 +41,23 @@ namespace Assignment04
             }
             return Sum;
         }
+   
+        static int SumOfIndividualDigits(string Digit)
+        {
+            int Sum = 0;
+            for (int i = 0; i < Digit.Length; i++)
+            {
+                Sum += int.Parse(Digit[i].ToString());
+            }
+            return Sum;
+        }
+        static void SumAndSub(int X,int Y,out int Sum,out int Sub)
+        {
+            Sum = X + Y;
+            Sub = X - Y;
+        }
         static bool IsPrime(int Number)
-           
+
         {
             if (Number == 1)
             {
@@ -57,19 +72,22 @@ namespace Assignment04
             }
             return true;
         }
-        static int SumOfIndividualDigits(string Digit)
+
+        static void MinMaxArray(int[] Arr,ref int Min,ref int Max)
         {
-            int Sum = 0;
-            for (int i = 0; i < Digit.Length; i++)
+            Min = Arr[0];
+            Max = Arr[0];
+            for (int i = 1; i < Arr.Length; i++)
             {
-                Sum += int.Parse(Digit[i].ToString());
+                if (Arr[i] < Min)
+                {
+                    Min = Arr[i];
+                }
+                else if (Arr[i] > Max)
+                {
+                    Max = Arr[i];
+                }
             }
-            return Sum;
-        }
-        static void SumAndSub(int X,int Y,out int Sum,out int Sub)
-        {
-            Sum = X + Y;
-            Sub = X - Y;
         }
         static void Main(string[] args)
         {
@@ -154,9 +172,21 @@ namespace Assignment04
             #region Q5
             // 5 - Create a function named "IsPrime", which receives an integer number
             //and retuns true if it is prime, or false if it is not: 
-            Console.Write("Enter a Number: ");
-            int Number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(IsPrime(Number));
+            //Console.Write("Enter a Number: ");
+            //int Number = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(IsPrime(Number));
+            #endregion
+
+            #region Q6
+            /*
+             6- Create a function named MinMaxArray, to return the minimum and 
+                 maximum values stored in an array, using reference parameters 
+             */
+            int Min = 0, Max = 0;
+            int[] Numbers = { 1, 2, 3,-2, 4, 5 };
+            MinMaxArray(Numbers, ref Min, ref Max);
+            Console.WriteLine($"Max={Max}");
+            Console.WriteLine($"Min={Min}");
             #endregion
         }
 
