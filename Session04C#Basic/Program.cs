@@ -111,10 +111,20 @@ namespace Session04C_Basic
         //    return Result;
         //}
 
-        static void SumMul(int X,int Y,out int Sum,out int Mul)
+        //static void SumMul(int X,int Y,out int Sum,out int Mul)
+        //{
+        //    Sum = X + Y;
+        //    Mul = Y * X;
+        //}
+
+        static int SumArray(params int[] Arr)
         {
-            Sum = X + Y;
-            Mul = Y * X;
+            int Sum = 0;
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i];
+            }
+            return Sum;
         }
 
         static void Main(string[] args)
@@ -335,6 +345,12 @@ namespace Session04C_Basic
 
             //Console.WriteLine(Sum);
             //Console.WriteLine(Mul);
+            #endregion
+
+            #region Params Video10
+            int[] Numbers = { 1, 2, 3, 4, 5, 6, 9 };
+            //Console.WriteLine(SumArray(Numbers));
+            Console.WriteLine(SumArray(1,1,2,3,4));
             #endregion
         }
     }
