@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Immutable;
+using System.ComponentModel;
 using System.IO.Pipelines;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -116,7 +117,7 @@ namespace Assignment04
         }
         //Q9
 
-        //Q10
+       
         static int SumArray(int[] Arr)
         {
             int Sum = 0;
@@ -126,6 +127,7 @@ namespace Assignment04
             }
             return Sum;
         }
+        //Q10
         static int[][] DisplayIdentityMatrix(int N)
         {
             int[][] Matrix = new int[N][];
@@ -147,6 +149,13 @@ namespace Assignment04
 
             }
             return Matrix;
+        }
+        //Q11
+        static int[] MergeAndSortTwoArrays(int[] Arr1,int[] Arr2)
+        {
+            int[] Result = Arr1.Concat(Arr2).ToArray();
+            Array.Sort(Result);
+            return Result;
         }
         static void Main(string[] args)
         {
@@ -297,8 +306,23 @@ namespace Assignment04
              10- Write a program in C# Sharp to find the sum of all elements of the 
                  array.
              */
-            int[] Arr = { 3, 4, 5 };
-            Console.WriteLine($"Sum= {SumArray(Arr)} ");
+            //int[] Arr = { 3, 4, 5 };
+            //Console.WriteLine($"Sum= {SumArray(Arr)} ");
+            #endregion
+
+
+            #region Q11
+            /*
+             11- - Write a program in C# Sharp to merge two arrays of the same size 
+                    sorted in ascending order. 
+             */
+            int[] Arr1 = { 103, 6, 0 };
+            int[] Arr2 = { 3, 9, 100 };
+            int[] Result = MergeAndSortTwoArrays(Arr1, Arr2);
+            for (int i = 0; i < Result.Length; i++)
+            {
+                Console.Write($"{Result[i]} ");  
+            }
             #endregion
 
         }
