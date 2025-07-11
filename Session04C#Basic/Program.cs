@@ -7,7 +7,11 @@ namespace Session04C_Basic
     //2.Interfaces-->Function
     //3.Classes -->Function
     //4.Enum
-
+    class NewData
+    {
+      public  int Sum;
+       public int Mul;
+    }
     internal class Program
     {
         //static void PrintShape()
@@ -26,20 +30,60 @@ namespace Session04C_Basic
 
         //       }
         //   }
+        //static int SumArray(int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr[0] = 100;
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
 
-        static void PrintShape(string Pattern = "XXX-", int Count = 4)
-        {
-            for (int i = 0; i < Count; i++)
-            {
-                Console.WriteLine(Pattern);
+        //static int SumArray(ref int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr[0] = 100;
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
+        //static int SumArray( int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr = new int[] { 10, 20, 30 };
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
+        //static int SumArray(ref int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr = new int[] { 10, 20, 30 };
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
+        //static void PrintShape(string Pattern = "XXX-", int Count = 4)
+        //{
+        //    for (int i = 0; i < Count; i++)
+        //    {
+        //        Console.WriteLine(Pattern);
 
-            }
-        }
+        //    }
+        //}
 
-        static int SumNumbers(int Number01, int Number02)
-        {
-            return Number01 + Number02;
-        }
+        //static int SumNumbers(int Number01, int Number02)
+        //{
+        //    return Number01 + Number02;
+        //}
 
         //static void SWAP(int X,int Y)
         //{
@@ -54,8 +98,34 @@ namespace Session04C_Basic
         //    Y = Temp;
         //}
 
+        //static NewData SumMul(int X,int Y)
+        //{
+        //    NewData data = new NewData();
+        //    data.Sum = X + Y;
+        //    data.Mul = X * Y;
+        //    return data;
+        //}
+        //static int[] SumMul(int X,int Y)
+        //{
+        //    int[] Result = { X + Y, X * Y };
+        //    return Result;
+        //}
 
+        //static void SumMul(int X,int Y,out int Sum,out int Mul)
+        //{
+        //    Sum = X + Y;
+        //    Mul = Y * X;
+        //}
 
+        static int SumArray(params int[] Arr)
+        {
+            int Sum = 0;
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i];
+            }
+            return Sum;
+        }
 
         static void Main(string[] args)
         {
@@ -234,6 +304,53 @@ namespace Session04C_Basic
             //SWAP(ref A, ref B);//Passing by ref
             //Console.WriteLine($"A={A}");
             //Console.WriteLine($"B={B}");
+            #endregion
+
+
+            #region Passing Parameters Reference Type Video07
+            //1.Passing by Value
+            //int[] Numbers = { 1, 2, 3 };
+            //Console.WriteLine(SumArray(Numbers));
+            //Console.WriteLine(Numbers[0]);
+
+            //2.Passing by reference
+            //Console.WriteLine(SumArray(ref Numbers));
+            //Console.WriteLine(Numbers[0]);
+            #endregion
+
+            #region Passing Parameters Reference Type Video08
+            //int[] Numbers = { 1, 2, 3 };
+            ////Console.WriteLine(SumArray(Numbers));//Passing by value
+            ////Console.WriteLine(Numbers[0]);
+
+            //Console.WriteLine(SumArray(ref Numbers));
+            //Console.WriteLine(Numbers[0]);
+            #endregion
+
+            #region Out Parameters Video09
+            //int A = 3, B = 4;
+            //int[] Result=SumMul(A, B);
+            //Console.WriteLine(Result[0]);
+            //Console.WriteLine(Result[1]);
+            //NewData Result=SumMul(A, B);
+            //Console.WriteLine(Result.Sum);
+            //Console.WriteLine(Result.Mul);
+
+            //Passing by out
+            //int A = 4, B = 5, Sum = 23, Mul;
+            //int A = 4, B = 5;
+            //SumMul(A,B,out Sum,out Mul);
+            //SumMul(A, B, out int Sum, out int Mul);
+            //SumMul(A, B, out int Sum, out _);
+
+            //Console.WriteLine(Sum);
+            //Console.WriteLine(Mul);
+            #endregion
+
+            #region Params Video10
+            int[] Numbers = { 1, 2, 3, 4, 5, 6, 9 };
+            //Console.WriteLine(SumArray(Numbers));
+            Console.WriteLine(SumArray(1,1,2,3,4));
             #endregion
         }
     }
