@@ -73,6 +73,7 @@ namespace Assignment04
             return true;
         }
 
+
         static void MinMaxArray(int[] Arr,ref int Min,ref int Max)
         {
             Min = Arr[0];
@@ -88,6 +89,16 @@ namespace Assignment04
                     Max = Arr[i];
                 }
             }
+        }
+       
+        static int FactoralOFNumber(int Number)
+        {
+            int Result = 1;
+            for (int i = Number; i > 0; i--)
+            {
+                Result *= i;
+            }
+            return Result;
         }
         static void Main(string[] args)
         {
@@ -182,11 +193,21 @@ namespace Assignment04
              6- Create a function named MinMaxArray, to return the minimum and 
                  maximum values stored in an array, using reference parameters 
              */
-            int Min = 0, Max = 0;
-            int[] Numbers = { 1, 2, 3,-2, 4, 5 };
-            MinMaxArray(Numbers, ref Min, ref Max);
-            Console.WriteLine($"Max={Max}");
-            Console.WriteLine($"Min={Min}");
+            //int Min = 0, Max = 0;
+            //int[] Numbers = { 1, 2, 3,-2, 4, 5 };
+            //MinMaxArray(Numbers, ref Min, ref Max);
+            //Console.WriteLine($"Max={Max}");
+            //Console.WriteLine($"Min={Min}");
+            #endregion
+
+            #region Q7
+            /*
+              Create function to calculate the factorial of the number specified as 
+              parameter 
+             */
+            Console.Write("Enter a Number: ");
+            int Number = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Result= {FactoralOFNumber(Number)}");
             #endregion
         }
 
