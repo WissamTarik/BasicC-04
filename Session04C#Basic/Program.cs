@@ -10,7 +10,53 @@ namespace Session04C_Basic
 
     internal class Program
     {
-   
+        //static void PrintShape()
+        //   {
+        //       for (int i = 0; i < 10; i++)
+        //       {
+        //           Console.WriteLine("^-^");
+
+        //       }
+        //   }
+        //static void PrintShape(int Count)
+        //   {
+        //       for (int i = 0; i < Count; i++)
+        //       {
+        //           Console.WriteLine("^-^");
+
+        //       }
+        //   }
+
+        static void PrintShape(string Pattern = "XXX-", int Count = 4)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                Console.WriteLine(Pattern);
+
+            }
+        }
+
+        static int SumNumbers(int Number01, int Number02)
+        {
+            return Number01 + Number02;
+        }
+
+        //static void SWAP(int X,int Y)
+        //{
+        //    int Temp = X;
+        //    X = Y;
+        //    Y = Temp;
+        //}
+        //static void SWAP(ref int X, ref int Y)
+        //{
+        //    int Temp = X;
+        //    X = Y;
+        //    Y = Temp;
+        //}
+
+
+
+
         static void Main(string[] args)
         {
             #region One D Array Video01
