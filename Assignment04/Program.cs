@@ -115,6 +115,17 @@ namespace Assignment04
             return Result;
         }
         //Q9
+
+        //Q10
+        static int SumArray(int[] Arr)
+        {
+            int Sum = 0;
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i];
+            }
+            return Sum;
+        }
         static int[][] DisplayIdentityMatrix(int N)
         {
             int[][] Matrix = new int[N][];
@@ -267,18 +278,27 @@ namespace Assignment04
                   other words takes a value n from the user and shows the identity table 
                   of size n * n. 
              */
-            Console.Write("Enter size of array: ");
-            int N = int.Parse(Console.ReadLine());
-            int[][] Matrix = DisplayIdentityMatrix(N);
-            for (int i = 0; i < N; i++)
-            {
-                for ( int j = 0; j < N; j++)
-                {
-                    Console.Write(Matrix[i][j]+" ");
-                }
-                Console.WriteLine();
-            }
+            //Console.Write("Enter size of array: ");
+            //int N = int.Parse(Console.ReadLine());
+            //int[][] Matrix = DisplayIdentityMatrix(N);
+            //for (int i = 0; i < N; i++)
+            //{
+            //    for ( int j = 0; j < N; j++)
+            //    {
+            //        Console.Write(Matrix[i][j]+" ");
+            //    }
+            //    Console.WriteLine();
+            //}
 
+            #endregion
+
+            #region Q10
+            /*
+             10- Write a program in C# Sharp to find the sum of all elements of the 
+                 array.
+             */
+            int[] Arr = { 3, 4, 5 };
+            Console.WriteLine($"Sum= {SumArray(Arr)} ");
             #endregion
 
         }
