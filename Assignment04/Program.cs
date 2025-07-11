@@ -18,6 +18,26 @@ namespace Assignment04
             X = Y;
             Y = Temp;
         }
+        static int SumArrayByValue(int[] Arr)
+        {
+            int Sum = 0;
+            Arr = new int[] { 100, 200 };
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i]; 
+            }
+            return Sum;
+        }
+        static int SumArrayByReference(ref int[] Arr)
+        {
+            int Sum = 0;
+            Arr = new int[] { 100, 200 };
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i]; 
+            }
+            return Sum;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -26,7 +46,7 @@ namespace Assignment04
 
             //Passing by value Means copying the  value in STACK FRAME of function
             //and the actual value isn't affected by any change
-            int A = 10, B = 15;
+            //int A = 10, B = 15;
             //Console.WriteLine("====Before Swapping=====");
             //Console.WriteLine($"A= {A}");//10
             //Console.WriteLine($"B= {B}");//15
@@ -41,15 +61,39 @@ namespace Assignment04
             //(Makes the parameters and variables refer to same space in stack)
             //by using ref Keyword
 
-            Console.WriteLine("====Before Swapping=====");
-            Console.WriteLine($"A= {A}");//10
-            Console.WriteLine($"B= {B}");//15
-            SwapByReference(ref A,ref B);
+            //Console.WriteLine("====Before Swapping=====");
+            //Console.WriteLine($"A= {A}");//10
+            //Console.WriteLine($"B= {B}");//15
+            //SwapByReference(ref A,ref B);
 
-            Console.WriteLine();
-            Console.WriteLine("====After Swapping=====");
-            Console.WriteLine($"A= {A}");//15
-            Console.WriteLine($"B= {B}");//10
+            //Console.WriteLine();
+            //Console.WriteLine("====After Swapping=====");
+            //Console.WriteLine($"A= {A}");//15
+            //Console.WriteLine($"B= {B}");//10
+            #endregion
+
+            #region Q2
+            /*
+              Explain the difference between passing (Reference type 
+              parameters) by value and by reference then write a suitable c# 
+              example. 
+             */
+
+            //Passing by value
+            //We pass a copy of the reference if we changed the value in function will affect
+            //the actual variable  but when we re-assign the parameters to new object it doesn't
+            //affect the outer value will still point to it
+            //the old value will still reachable by outside variables
+            int[] Numbers = { 1, 2, 3 };
+            Console.WriteLine($"Total={SumArrayByValue(Numbers)}");
+            Console.WriteLine($"Numbers[0]={Numbers[0]}");
+
+            //Passing by reference
+            //we use ref Keyword
+            //when we re-assign the parameters to new value it will affect the actual value
+            // the old value will be unreachable
+            Console.WriteLine($"Total={SumArrayByReference(ref Numbers)}");
+            Console.WriteLine($"Numbers[0]={Numbers[0]}");
             #endregion
         }
     }
