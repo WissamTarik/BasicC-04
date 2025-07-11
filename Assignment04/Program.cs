@@ -158,6 +158,7 @@ namespace Assignment04
             return Result;
         }
 
+        //Q12
         static void FindMaxAndMinInArray(int[] Arr)
         {
             int Min = Arr[0], Max = Arr[0];
@@ -175,6 +176,26 @@ namespace Assignment04
             }
             Console.WriteLine($"Max={Max}");
             Console.WriteLine($"Min={Min}");
+        }
+        
+        //Q13
+        static int FindSecondLargestNumber(int[] Arr)
+        {
+            int First = Arr[0], Second = Arr[0];
+
+            for (int i = 1; i < Arr.Length; i++)
+            {
+                if (Arr[i] > First)
+                {
+                    Second = First;
+                    First = Arr[i];
+                }
+                else if (Arr[i] > Second && Arr[i]!=First)
+                {
+                    Second = Arr[i];
+                }
+            }
+            return Second;
         }
         static void Main(string[] args)
         {
@@ -350,8 +371,18 @@ namespace Assignment04
              12- Write a program in C# Sharp to find maximum and minimum element in an 
                   array
              */
-            int[] Numbers = { 1, 5, 100, -5, 20 };
-            FindMaxAndMinInArray(Numbers);
+            //int[] Numbers = { 1, 5, 100, -5, 20 };
+            //FindMaxAndMinInArray(Numbers);
+            #endregion
+
+
+            #region Q13
+            /*
+             13- Write a program in C# Sharp to find the second largest element in an 
+                 array. 
+             */
+            int[] Numbers = { 1, 2, 3, 4, 9, 10, 5 };
+            Console.WriteLine(FindSecondLargestNumber(Numbers));
             #endregion
 
         }
