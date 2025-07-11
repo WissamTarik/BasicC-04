@@ -197,6 +197,28 @@ namespace Assignment04
             }
             return Second;
         }
+       
+        //Q14
+        static int FindMaxDistanceBetweenTwoEqualCells(int[] Arr)
+        {
+            int MaxDistance = 0;
+            for (int i = 0; i < Arr.Length-1; i++)
+            {
+                for (int j = Arr.Length-1; j > i; j--)
+                {
+                    if (Arr[i] == Arr[j])
+                    {
+                        int distance = j - i - 1;
+                        if (distance > MaxDistance)
+                        {
+                            MaxDistance = distance;
+                        }
+                            break;
+                    }
+                }
+            }
+            return MaxDistance;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -381,8 +403,25 @@ namespace Assignment04
              13- Write a program in C# Sharp to find the second largest element in an 
                  array. 
              */
-            int[] Numbers = { 1, 2, 3, 4, 9, 10, 5 };
-            Console.WriteLine(FindSecondLargestNumber(Numbers));
+            //int[] Numbers = { 1, 2, 3, 4, 9, 10, 5 };
+            //Console.WriteLine(FindSecondLargestNumber(Numbers));
+            #endregion
+
+            #region Q14
+            /*
+             write a program to find the longest distance between Two equal cells. In this example. The 
+            distance is measured by the number Of cells- for example, the distance between the first and the 
+            fourth cell is 2 (cell 2 and cell 3). 
+             */
+            Console.Write("Enter the size of the array: ");
+            int Size = int.Parse(Console.ReadLine());
+            int[] Arr = new int[Size];
+            for (int i = 0; i < Size; i++)
+            {
+                Console.Write($"Arr[{i}]= ");
+                Arr[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Max distance is {FindMaxDistanceBetweenTwoEqualCells(Arr)}");
             #endregion
 
         }
