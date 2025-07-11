@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel;
+using System.IO.Pipelines;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment04
 {
@@ -38,7 +41,22 @@ namespace Assignment04
             }
             return Sum;
         }
-
+        static bool IsPrime(int Number)
+           
+        {
+            if (Number == 1)
+            {
+                return false;
+            }
+            for (int i = 2; i <= Math.Sqrt(Number); i++)
+            {
+                if (Number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         static int SumOfIndividualDigits(string Digit)
         {
             int Sum = 0;
@@ -128,9 +146,17 @@ namespace Assignment04
              4- Write a program in C# Sharp to create a function to calculate the sum of the 
                  individual digits of a given number. 
              */
-            Console.Write("Enter a number: ");
-            string Digit = Console.ReadLine();
-            Console.WriteLine($"The sum of the digits of the number {Digit} is: {SumOfIndividualDigits(Digit)} ");
+            //Console.Write("Enter a number: ");
+            //string Digit = Console.ReadLine();
+            //Console.WriteLine($"The sum of the digits of the number {Digit} is: {SumOfIndividualDigits(Digit)} ");
+            #endregion
+
+            #region Q5
+            // 5 - Create a function named "IsPrime", which receives an integer number
+            //and retuns true if it is prime, or false if it is not: 
+            Console.Write("Enter a Number: ");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(IsPrime(Number));
             #endregion
         }
 
