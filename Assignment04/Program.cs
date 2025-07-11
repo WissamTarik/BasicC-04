@@ -157,6 +157,25 @@ namespace Assignment04
             Array.Sort(Result);
             return Result;
         }
+
+        static void FindMaxAndMinInArray(int[] Arr)
+        {
+            int Min = Arr[0], Max = Arr[0];
+            for (int i = 1; i < Arr.Length; i++)
+            {
+                if (Arr[i] < Min)
+                {
+                    Min = Arr[i];
+                }
+                else if (Arr[i] > Max)
+                {
+                    Max = Arr[i];
+                }
+               
+            }
+            Console.WriteLine($"Max={Max}");
+            Console.WriteLine($"Min={Min}");
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -317,12 +336,22 @@ namespace Assignment04
                     sorted in ascending order. 
              */
             int[] Arr1 = { 103, 6, 0 };
-            int[] Arr2 = { 3, 9, 100 };
-            int[] Result = MergeAndSortTwoArrays(Arr1, Arr2);
-            for (int i = 0; i < Result.Length; i++)
-            {
-                Console.Write($"{Result[i]} ");  
-            }
+            //int[] Arr2 = { 3, 9, 100 };
+            //int[] Result = MergeAndSortTwoArrays(Arr1, Arr2);
+            //for (int i = 0; i < Result.Length; i++)
+            //{
+            //    Console.Write($"{Result[i]} ");  
+            //}
+            #endregion
+
+
+            #region Q12
+            /*
+             12- Write a program in C# Sharp to find maximum and minimum element in an 
+                  array
+             */
+            int[] Numbers = { 1, 5, 100, -5, 20 };
+            FindMaxAndMinInArray(Numbers);
             #endregion
 
         }
