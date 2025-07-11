@@ -39,6 +39,15 @@ namespace Assignment04
             return Sum;
         }
 
+        static int SumOfIndividualDigits(string Digit)
+        {
+            int Sum = 0;
+            for (int i = 0; i < Digit.Length; i++)
+            {
+                Sum += int.Parse(Digit[i].ToString());
+            }
+            return Sum;
+        }
         static void SumAndSub(int X,int Y,out int Sum,out int Sub)
         {
             Sum = X + Y;
@@ -107,12 +116,24 @@ namespace Assignment04
             //3 - Write a c# Function that accept 4 parameters from user and 
             //return result of summation and subtracting of two numbers
 
-            SumAndSub(3,5,out int Sum, out int Sub);
+            //SumAndSub(3,5,out int Sum, out int Sub);
 
-            Console.WriteLine($"Sum={Sum}");
-            Console.WriteLine($"Subtraction={Sub}");
+            //Console.WriteLine($"Sum={Sum}");
+            //Console.WriteLine($"Subtraction={Sub}");
 
             #endregion
+
+            #region Q4
+            /*
+             4- Write a program in C# Sharp to create a function to calculate the sum of the 
+                 individual digits of a given number. 
+             */
+            Console.Write("Enter a number: ");
+            string Digit = Console.ReadLine();
+            Console.WriteLine($"The sum of the digits of the number {Digit} is: {SumOfIndividualDigits(Digit)} ");
+            #endregion
         }
+
+
     }
 }
