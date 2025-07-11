@@ -37,10 +37,30 @@ namespace Session04C_Basic
         //    return Sum;
         //}
 
+        //static int SumArray(ref int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr[0] = 100;
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
+        //static int SumArray( int[] Arr)
+        //{
+        //    int Sum = 0;
+        //    Arr = new int[] { 10, 20, 30 };
+        //    for (int i = 0; i < Arr.Length; i++)
+        //    {
+        //        Sum += Arr[i];
+        //    }
+        //    return Sum;
+        //}
         static int SumArray(ref int[] Arr)
         {
             int Sum = 0;
-            Arr[0] = 100;
+            Arr = new int[] { 10, 20, 30 };
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
@@ -259,11 +279,20 @@ namespace Session04C_Basic
 
             #region Passing Parameters Reference Type Video07
             //1.Passing by Value
-            int[] Numbers = { 1, 2, 3 };
+            //int[] Numbers = { 1, 2, 3 };
             //Console.WriteLine(SumArray(Numbers));
             //Console.WriteLine(Numbers[0]);
 
             //2.Passing by reference
+            //Console.WriteLine(SumArray(ref Numbers));
+            //Console.WriteLine(Numbers[0]);
+            #endregion
+
+            #region Passing Parameters Reference Type Video08
+            //int[] Numbers = { 1, 2, 3 };
+            ////Console.WriteLine(SumArray(Numbers));//Passing by value
+            ////Console.WriteLine(Numbers[0]);
+
             //Console.WriteLine(SumArray(ref Numbers));
             //Console.WriteLine(Numbers[0]);
             #endregion
