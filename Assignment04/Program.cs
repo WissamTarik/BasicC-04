@@ -104,6 +104,7 @@ namespace Assignment04
             }
         }
        
+        //Q8
         static int FactoralOFNumber(int Number)
         {
             int Result = 1;
@@ -112,6 +113,29 @@ namespace Assignment04
                 Result *= i;
             }
             return Result;
+        }
+        //Q9
+        static int[][] DisplayIdentityMatrix(int N)
+        {
+            int[][] Matrix = new int[N][];
+            for (int i = 0; i < N; i++)
+            {
+                Matrix[i] = new int[N];
+                for (int j = 0; j < N; j++)
+                {
+                    if (i == j)
+                    {
+                        Matrix[i][j] = 1;
+                    }
+                    else
+                    {
+                        Matrix[i][j] = 0;
+                    }
+
+                }
+
+            }
+            return Matrix;
         }
         static void Main(string[] args)
         {
@@ -228,13 +252,33 @@ namespace Assignment04
              8- Create a function named "ChangeChar" to modify a letter in a certain 
                 position (0 based) of a string, replacing it with a different letter  
              */
-            Console.Write("Enter the Word: ");
-            string Word = Console.ReadLine();
-            Console.Write("Enter the position: ");
-            int position = int.Parse(Console.ReadLine());
-            Console.Write("Enter the letter: ");
-            char letter = char.Parse(Console.ReadLine());
-            Console.WriteLine($"Word is: {ChangeChar(Word,position,letter)}"); ;
+            //Console.Write("Enter the Word: ");
+            //string Word = Console.ReadLine();
+            //Console.Write("Enter the position: ");
+            //int position = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the letter: ");
+            //char letter = char.Parse(Console.ReadLine());
+            //Console.WriteLine($"Word is: {ChangeChar(Word,position,letter)}"); ;
+            #endregion
+
+            #region Q9
+            /*
+             9- . Write a program that prints an identity matrix using for loop, in 
+                  other words takes a value n from the user and shows the identity table 
+                  of size n * n. 
+             */
+            Console.Write("Enter size of array: ");
+            int N = int.Parse(Console.ReadLine());
+            int[][] Matrix = DisplayIdentityMatrix(N);
+            for (int i = 0; i < N; i++)
+            {
+                for ( int j = 0; j < N; j++)
+                {
+                    Console.Write(Matrix[i][j]+" ");
+                }
+                Console.WriteLine();
+            }
+
             #endregion
 
         }
