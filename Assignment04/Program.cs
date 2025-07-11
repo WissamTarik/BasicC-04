@@ -73,7 +73,20 @@ namespace Assignment04
             return true;
         }
 
-
+        static string ChangeChar(string word,int position,char character)
+        {
+            if (position > word.Length||position <0)
+            {
+                return "Invalid position";
+            }
+            else
+            {
+                char[] WordChars = word.ToCharArray();
+                WordChars[position] = character;
+                return new string(WordChars);
+            }
+           
+        }
         static void MinMaxArray(int[] Arr,ref int Min,ref int Max)
         {
             Min = Arr[0];
@@ -205,10 +218,25 @@ namespace Assignment04
               Create function to calculate the factorial of the number specified as 
               parameter 
              */
-            Console.Write("Enter a Number: ");
-            int Number = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Result= {FactoralOFNumber(Number)}");
+            //Console.Write("Enter a Number: ");
+            //int Number = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Result= {FactoralOFNumber(Number)}");
             #endregion
+
+            #region Q8
+            /*
+             8- Create a function named "ChangeChar" to modify a letter in a certain 
+                position (0 based) of a string, replacing it with a different letter  
+             */
+            Console.Write("Enter the Word: ");
+            string Word = Console.ReadLine();
+            Console.Write("Enter the position: ");
+            int position = int.Parse(Console.ReadLine());
+            Console.Write("Enter the letter: ");
+            char letter = char.Parse(Console.ReadLine());
+            Console.WriteLine($"Word is: {ChangeChar(Word,position,letter)}"); ;
+            #endregion
+
         }
 
 
