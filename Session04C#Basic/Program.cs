@@ -64,6 +64,50 @@ namespace Session04C_Basic
             //Console.WriteLine(Numbers.GetType()); 
             #endregion
 
+            #region Two D Array Video02
+            //int[,] Marks = new int[3, 3];
+            //Marks[0, 0] = 99;
+            //Marks[0, 1] = 99;
+            //Marks[0, 2] = 99;
+
+            //Marks[1, 0] = 80;
+            //Marks[1, 1] = 98;
+            //Marks[1, 2] = 97;
+
+            //Marks[2, 0] = 88;
+            //Marks[2, 1] = 89;
+            //Marks[2, 2] = 47;
+
+            //Console.WriteLine(Marks[0, 0]);
+            //Console.WriteLine(Marks[0, 1]);
+            //Console.WriteLine(Marks[0, 2]);
+            //Console.WriteLine(Marks[1, 0]);
+            //Console.WriteLine(Marks[1, 1]);
+            //Console.WriteLine(Marks[1, 2]);
+            //Console.WriteLine(Marks[2, 0]);
+            //Console.WriteLine(Marks[2, 1]);
+            //Console.WriteLine(Marks[2, 2]);
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 3; j++)
+            //    {
+            //        Console.Write($"Enter Mark[{i},{j}]: ");
+            //        Marks[i, j] = int.Parse(Console.ReadLine());
+            //    }
+
+            //}
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 3; j++)
+            //    {
+            //        Console.Write($"{Marks[i,j]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+
         }
     }
 }
