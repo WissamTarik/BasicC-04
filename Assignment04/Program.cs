@@ -38,6 +38,12 @@ namespace Assignment04
             }
             return Sum;
         }
+
+        static void SumAndSub(int X,int Y,out int Sum,out int Sub)
+        {
+            Sum = X + Y;
+            Sub = X - Y;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -84,16 +90,28 @@ namespace Assignment04
             //the actual variable  but when we re-assign the parameters to new object it doesn't
             //affect the outer value will still point to it
             //the old value will still reachable by outside variables
-            int[] Numbers = { 1, 2, 3 };
-            Console.WriteLine($"Total={SumArrayByValue(Numbers)}");
-            Console.WriteLine($"Numbers[0]={Numbers[0]}");
+            //int[] Numbers = { 1, 2, 3 };
+            //Console.WriteLine($"Total={SumArrayByValue(Numbers)}");
+            //Console.WriteLine($"Numbers[0]={Numbers[0]}");
 
             //Passing by reference
             //we use ref Keyword
             //when we re-assign the parameters to new value it will affect the actual value
             // the old value will be unreachable
-            Console.WriteLine($"Total={SumArrayByReference(ref Numbers)}");
-            Console.WriteLine($"Numbers[0]={Numbers[0]}");
+            //Console.WriteLine($"Total={SumArrayByReference(ref Numbers)}");
+            //Console.WriteLine($"Numbers[0]={Numbers[0]}");
+            #endregion
+
+            #region Q3
+
+            //3 - Write a c# Function that accept 4 parameters from user and 
+            //return result of summation and subtracting of two numbers
+
+            SumAndSub(3,5,out int Sum, out int Sub);
+
+            Console.WriteLine($"Sum={Sum}");
+            Console.WriteLine($"Subtraction={Sub}");
+
             #endregion
         }
     }
