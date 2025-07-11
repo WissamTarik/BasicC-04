@@ -219,6 +219,14 @@ namespace Assignment04
             }
             return MaxDistance;
         }
+       
+        //Q15
+        static string ReverseString(string[] Arr)
+        {
+            
+             Array.Reverse(Arr);
+            return string.Join(" ", Arr);
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -413,15 +421,23 @@ namespace Assignment04
             distance is measured by the number Of cells- for example, the distance between the first and the 
             fourth cell is 2 (cell 2 and cell 3). 
              */
-            Console.Write("Enter the size of the array: ");
-            int Size = int.Parse(Console.ReadLine());
-            int[] Arr = new int[Size];
-            for (int i = 0; i < Size; i++)
-            {
-                Console.Write($"Arr[{i}]= ");
-                Arr[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine($"Max distance is {FindMaxDistanceBetweenTwoEqualCells(Arr)}");
+            //Console.Write("Enter the size of the array: ");
+            //int Size = int.Parse(Console.ReadLine());
+            //int[] Arr = new int[Size];
+            //for (int i = 0; i < Size; i++)
+            //{
+            //    Console.Write($"Arr[{i}]= ");
+            //    Arr[i] = int.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine($"Max distance is {FindMaxDistanceBetweenTwoEqualCells(Arr)}");
+            #endregion
+
+            #region Q15
+            Console.Write("Enter the text: ");
+            string Text = Console.ReadLine();
+            string[] Arr = Text.Split(" ");
+            Console.WriteLine($"Reversed string={ReverseString(Arr)}");
+
             #endregion
 
         }
