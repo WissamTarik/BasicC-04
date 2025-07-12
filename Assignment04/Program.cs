@@ -243,6 +243,19 @@ namespace Assignment04
             }
             return Second;
         }
+       
+        //Q17
+        static int[] ReverseArray(int[] Arr)
+        {
+            int[] ReversedArray=new int[Arr.Length];
+            int j = 0;
+            for (int i = Arr.Length-1; i >=0 ; i--)
+            {
+                ReversedArray[j]=Arr[i];
+                j++;
+            }
+            return ReversedArray;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -462,29 +475,49 @@ namespace Assignment04
                 Accept values from the user and store them in first array. Now copy all 
                the elements of the first array on second array and print second array. 
              */
-            Console.Write("Enter the first dimension size: ");
-            int N01 = int.Parse(Console.ReadLine());
-            Console.Write("Enter the Second dimension size: ");
-            int N02 = int.Parse(Console.ReadLine());
-            int[][] First = new int[N01][];
+            //Console.Write("Enter the first dimension size: ");
+            //int N01 = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the Second dimension size: ");
+            //int N02 = int.Parse(Console.ReadLine());
+            //int[][] First = new int[N01][];
+            //Console.WriteLine("Enter array elements: ");
+            //for (int i = 0; i < N01; i++)
+            //{
+            //    First[i] = new int[N02];
+            //    for (int j = 0; j < N02; j++)
+            //    {
+            //        First[i][j] = int.Parse(Console.ReadLine());   
+            //    }
+            //}
+            //int[][] Second = CopyArray(First, N01);
+            //Console.WriteLine("Copied array");
+            //for (int i = 0; i < N01; i++)
+            //{       
+            //    for (int j = 0; j < Second[i].Length; j++)
+            //    {
+            //        Console.Write($"{Second[i][j]} ");   
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+
+            #region Q17
+            /*
+             17- Write a Program to Print One Dimensional Array in Reverse Order 
+             */
+            Console.Write("Enter array size: ");
+            int N = int.Parse(Console.ReadLine());
+            int[] Arr = new int[N];
             Console.WriteLine("Enter array elements: ");
-            for (int i = 0; i < N01; i++)
+            for (int i = 0; i < N; i++)
             {
-                First[i] = new int[N02];
-                for (int j = 0; j < N02; j++)
-                {
-                    First[i][j] = int.Parse(Console.ReadLine());   
-                }
+                Arr[i] = int.Parse(Console.ReadLine());
             }
-            int[][] Second = CopyArray(First, N01);
-            Console.WriteLine("Copied array");
-            for (int i = 0; i < N01; i++)
-            {       
-                for (int j = 0; j < Second[i].Length; j++)
-                {
-                    Console.Write($"{Second[i][j]} ");   
-                }
-                Console.WriteLine();
+            int [] ReversedArray= ReverseArray(Arr);
+            Console.WriteLine("Reversed array: ");
+            for (int i = 0; i < ReversedArray.Length; i++)
+            {
+                Console.Write($"{ReversedArray[i]} ");
             }
             #endregion
         }
