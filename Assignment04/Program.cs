@@ -227,6 +227,22 @@ namespace Assignment04
              Array.Reverse(Arr);
             return string.Join(" ", Arr);
         }
+      
+        //Q16
+        static int[][] CopyArray(int[][] Arr,int N01)
+        {
+            int[][] Second = new int[N01][];
+
+            for (int i = 0; i < N01; i++)
+            {
+                Second[i] = new int[Arr[i].Length];
+                for (int j = 0; j < Arr[i].Length; j++)
+                {
+                    Second[i][j] = Arr[i][j];
+                }
+            }
+            return Second;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -433,13 +449,44 @@ namespace Assignment04
             #endregion
 
             #region Q15
-            Console.Write("Enter the text: ");
-            string Text = Console.ReadLine();
-            string[] Arr = Text.Split(" ");
-            Console.WriteLine($"Reversed string={ReverseString(Arr)}");
+            //Console.Write("Enter the text: ");
+            //string Text = Console.ReadLine();
+            //string[] Arr = Text.Split(" ");
+            //Console.WriteLine($"Reversed string={ReverseString(Arr)}");
 
             #endregion
 
+            #region Q16
+            /*
+             16- Write a program to create two multidimensional arrays of same size. 
+                Accept values from the user and store them in first array. Now copy all 
+               the elements of the first array on second array and print second array. 
+             */
+            Console.Write("Enter the first dimension size: ");
+            int N01 = int.Parse(Console.ReadLine());
+            Console.Write("Enter the Second dimension size: ");
+            int N02 = int.Parse(Console.ReadLine());
+            int[][] First = new int[N01][];
+            Console.WriteLine("Enter array elements: ");
+            for (int i = 0; i < N01; i++)
+            {
+                First[i] = new int[N02];
+                for (int j = 0; j < N02; j++)
+                {
+                    First[i][j] = int.Parse(Console.ReadLine());   
+                }
+            }
+            int[][] Second = CopyArray(First, N01);
+            Console.WriteLine("Copied array");
+            for (int i = 0; i < N01; i++)
+            {       
+                for (int j = 0; j < Second[i].Length; j++)
+                {
+                    Console.Write($"{Second[i][j]} ");   
+                }
+                Console.WriteLine();
+            }
+            #endregion
         }
 
 
